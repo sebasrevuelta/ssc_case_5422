@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETFramework,Version=v4.7.2": {
+      "bootstrap": {
+        "type": "Direct",
+        "requested": "[3.0.0, )",
+        "resolved": "3.0.0"
+      }
+    }
+  }
+}
+

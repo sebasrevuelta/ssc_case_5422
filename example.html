@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Data Template Example</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="user-template" data-template="user-card">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{ name }}</div>
+            <div class="panel-body">
+                Email: {{ email }}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function renderTemplate(id, data) {
+            var template = document.getElementById(id);
+            var templateString = template.innerHTML;
+            Object.keys(data).forEach(function(key) {
+                templateString = templateString.replace(new RegExp('{{ ' + key + ' }}', 'g'), data[key]);
+            });
+            template.innerHTML = templateString;
+        }
+
+        // Example data
+        var userData = {
+            name: 'John Doe',
+            email: 'john.doe@example.com'
+        };
+
+        renderTemplate('user-template', userData);
+    </script>
+</body>
+</html>
+
